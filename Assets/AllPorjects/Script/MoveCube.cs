@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+
+
 public class MoveCube : MonoBehaviour
 {
     [SerializeField] float speed;
@@ -21,28 +23,22 @@ public class MoveCube : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             moveCube(check_way(Vector3.up), Vector3.up);
-            
         }
-
         //Down
         if (Input.GetKeyDown(KeyCode.S))
         {
             moveCube(check_way(Vector3.down), Vector3.down);
-            
         }
-
         //Right
         if (Input.GetKeyDown(KeyCode.D))
         {
             moveCube(check_way(Vector3.right), Vector3.right);
         }
-
         //left
         if (Input.GetKeyDown(KeyCode.A))
         {
             moveCube(check_way(Vector3.left), Vector3.left);
         }
-
         NowmoveCubePos = this.transform.position;
        
     }
@@ -84,10 +80,10 @@ public class MoveCube : MonoBehaviour
     // Dictionary for rotation changes
     private Dictionary<Vector3, Vector3> rotationChanges = new Dictionary<Vector3, Vector3>
 {
-    { Vector3.forward, new Vector3(0f, -90f, 00f) },     // Rotate on x-axis upward
-    { Vector3.back, new Vector3(0f, 90f, 0f) },  // Rotate on x-axis downward
-    { Vector3.up, new Vector3(0f, 0f, 90f) },  // Rotate on y-axis right
-    { Vector3.down, new Vector3(0f, 0f, -90f) }   // Rotate on y-axis left
+    { Vector3.right, new Vector3(0f, -90f, 00f) },     // Rotate on x-axis upward
+    { Vector3.left, new Vector3(0f, 90f, 0f) },  // Rotate on x-axis downward
+    { Vector3.up, new Vector3(90f, 0f, 0f) },  // Rotate on y-axis right
+    { Vector3.down, new Vector3(-90f, 0f, 0f) }   // Rotate on y-axis left
 };
 
     void moveCube(int CheckDir, Vector3 dir)
@@ -127,6 +123,6 @@ public class MoveCube : MonoBehaviour
        
     }
 
-
+    
 
 }
