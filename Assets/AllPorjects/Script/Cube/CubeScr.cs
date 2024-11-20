@@ -51,7 +51,17 @@ public class CubeScr : MonoBehaviour
 
         UpdateActiveCubes();
     }
-   
+
+    public void LeftChangeBTN()
+    {
+        SelectColorCount = Math.Clamp(SelectColorCount - 1, 1, 3);
+        UpdateActiveCubes();
+    }
+    public void RightChangeBTN()
+    {
+        SelectColorCount = Math.Clamp(SelectColorCount + 1, 1, 3);
+        UpdateActiveCubes();
+    }
 
     void TracksDeleteCube()
     {
