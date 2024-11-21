@@ -918,7 +918,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1308630608}
         m_TargetAssemblyTypeName: GameStatus, Assembly-CSharp
-        m_MethodName: GameContinueandStop_Btn
+        m_MethodName: GameStart_Btn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3152,7 +3152,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 0.86602545
+  m_FocalLength: 0.8000001
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -3167,7 +3167,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60.000004
+  field of view: 64.010765
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -3194,7 +3194,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7899999, y: 1.33, z: -7.6600003}
+  m_LocalPosition: {x: 0.75000006, y: 0.88, z: -10.450001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7337,15 +7337,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6106246449489237231, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_TrackedObjectOffset.x
-      value: 0.79
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6106246449489237231, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_TrackedObjectOffset.y
-      value: 1.33
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 6106246449489237231, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_TrackedObjectOffset.z
-      value: 1.43
+      value: -1.36
       objectReference: {fileID: 0}
     - target: {fileID: 6420667406506719225, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_Follow
@@ -7355,17 +7355,21 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 126965591}
+    - target: {fileID: 6420667406506719225, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 64.010765
+      objectReference: {fileID: 0}
     - target: {fileID: 6861486194108459727, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.202001
+      value: -2.2420013
       objectReference: {fileID: 0}
     - target: {fileID: 6861486194108459727, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 6861486194108459727, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.6600003
+      value: -10.450001
       objectReference: {fileID: 0}
     - target: {fileID: 6861486194108459727, guid: 0f69b36701cf3254cb276120fe87db33, type: 3}
       propertyPath: m_LocalRotation.w

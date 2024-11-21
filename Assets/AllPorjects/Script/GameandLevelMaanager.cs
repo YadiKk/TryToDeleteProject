@@ -7,6 +7,7 @@ public class GameandLevelMaanager : MonoBehaviour
     [Header("Scripts")]
     public MoveCube MovecubeScript;
     public CubeScr cubeScrScript;
+    GameStatus gameStatusScript;
 
     [Space(12)]
     [Header("Time Cost")]
@@ -19,11 +20,19 @@ public class GameandLevelMaanager : MonoBehaviour
     [SerializeField] TextMeshProUGUI StepCout_txt;
     [SerializeField] TextMeshProUGUI ActiveCube_txt;
 
+    [Space(12)]
+    [Header("UI")]
+    [SerializeField] GameObject WinnerUI;
+    [SerializeField] GameObject LoseUI;
+
+
     private void Start()
     {
+        Time.timeScale = 1;
         savedelaytime = delayTime;
         if (MovecubeScript == null) MovecubeScript = GameObject.FindAnyObjectByType<MoveCube>();
         if (cubeScrScript == null) cubeScrScript = GameObject.FindAnyObjectByType<CubeScr>();
+        if (gameStatusScript == null) gameStatusScript = GameObject.FindAnyObjectByType<GameStatus>();
     }
 
     private void Update()
@@ -39,16 +48,31 @@ public class GameandLevelMaanager : MonoBehaviour
             {
                 if (cubeScrScript.activeCubeCount >= 1)
                 {
-                    Time_text.text = "LOSE!";
                     MovecubeScript.status = CubeStatus.Lose;
+                    Time_text.text = "LOSE!";
+                    
+                    WinnerUI.SetActive(false);
+                    LoseUI.SetActive(true);
+                    gameStatusScript.GameStart = false;
+                    gameStatusScript.GameandLevelMaanagerScript.enabled = gameStatusScript.GameStart;
+                    gameStatusScript.CubeScrScript.enabled = gameStatusScript.GameStart;
+                    gameStatusScript.MoveCubeScript.enabled = gameStatusScript.GameStart;
+                    
                     Time.timeScale = 0;
                 }
                 else
                 {
                     Time.timeScale = 1;
-                    Time_text.text = "WINNER!";
                     MovecubeScript.status = CubeStatus.Winner;
-                    
+                    WinnerUI.SetActive(true);
+                    LoseUI.SetActive(false);
+                    Time_text.text = "WINNER!";
+                    gameStatusScript.GameStart = false;
+                    gameStatusScript.GameandLevelMaanagerScript.enabled = gameStatusScript.GameStart;
+                    gameStatusScript.CubeScrScript.enabled = gameStatusScript.GameStart;
+                    gameStatusScript.MoveCubeScript.enabled = gameStatusScript.GameStart;
+
+
                 }
                 
             }
