@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using GG.Infrastructure.Utils;
+using GG.Infrastructure.Utils.Swipe;
 
 
 public class MoveCube : MonoBehaviour
@@ -11,7 +13,7 @@ public class MoveCube : MonoBehaviour
     public Vector3 NowmoveCubePos;
     [SerializeField] Vector3 rot;
     public CubeStatus status;
-    
+
     [Space(6)]
     [Header("Steps Settings")]
     public int NowstepCount;
@@ -24,7 +26,8 @@ public class MoveCube : MonoBehaviour
     [SerializeField] float Hitdistance;
     public int Dir_Check;
     [SerializeField] bool up, down, right, left, forwrd, back;
-    
+    [SerializeField] private SwipeListener swipeListener;
+
     [Space(12)]
     [Header("Sphere Settings")]
     [SerializeField] float sphereRadius;
@@ -50,11 +53,43 @@ public class MoveCube : MonoBehaviour
     {
         environmentSyncControl();
 
-        mobileControl();
+        //mobileControl();
         pcControl();
 
         NowmoveCubePos = this.transform.position;
-       
+
+    }
+
+    private void OnEnable()
+    {
+        swipeListener.OnSwipe.AddListener(OnSwipe);
+    }
+    private void OnSwipe(string swipe)
+    {
+        switch (swipe)
+        {
+            case "Right":
+                moveCube(check_way(Vector3.right), Vector3.right);
+                Debug.Log("Right Swipe"); 
+                break;
+            case "Left":
+                moveCube(check_way(Vector3.left), Vector3.left);
+                Debug.Log("Left Swipe");
+                break;
+            case "Up":
+                moveCube(check_way(Vector3.up), Vector3.up);
+                Debug.Log("Up Swipe");
+                break;
+            case "Down":
+                moveCube(check_way(Vector3.down), Vector3.down);
+                Debug.Log("Down Swipe");
+                break;
+        }
+    }
+
+    private void OnDisable()
+    {
+        swipeListener.OnSwipe.RemoveListener(OnSwipe);
     }
 
     void mobileControl()

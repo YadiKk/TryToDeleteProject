@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class CubeScr : MonoBehaviour
 {
     [Header("Sphere Settings")]
@@ -12,10 +14,11 @@ public class CubeScr : MonoBehaviour
     [Header("Color Settings")]
     [Range(1, 3)] public int SelectColorCount = 2;
     [SerializeField] Image RedImage, BlueImage, GreenImage;
-
+    [SerializeField] Image Crice;
+    [SerializeField] float rotLerp;
     [Header("Cube Settings")]
     private Dictionary<string, List<GameObject>> colorCubes;
-
+    
 
     public int totalCubeCount;
     public int activeCubeCount;
@@ -55,6 +58,11 @@ public class CubeScr : MonoBehaviour
     public void LeftChangeBTN()
     {
         SelectColorCount = Math.Clamp(SelectColorCount - 1, 1, 3);
+        UpdateActiveCubes();
+    }
+    public void ChangeBTN()
+    {
+        SelectColorCount = SelectColorCount == 3 ? 1 : SelectColorCount + 1;
         UpdateActiveCubes();
     }
     public void RightChangeBTN()
@@ -133,25 +141,36 @@ public class CubeScr : MonoBehaviour
 
     private void UpdateOutlines()
     {
+        if(SelectColorCount == 1) LeanTween.rotateZ(Crice.gameObject, -60f, rotLerp)
+                 .setEase(LeanTweenType.easeOutQuad);
+        if (SelectColorCount == 2) LeanTween.rotateZ(Crice.gameObject, 60f, rotLerp)
+                 .setEase(LeanTweenType.easeOutQuad);
+        if (SelectColorCount == 3) LeanTween.rotateZ(Crice.gameObject, 180f, rotLerp)
+                .setEase(LeanTweenType.easeOutQuad);
         RedImage.fillCenter = SelectColorCount == 1;
-        GreenImage.fillCenter = SelectColorCount == 2;
-        BlueImage.fillCenter = SelectColorCount == 3;
+        BlueImage.fillCenter = SelectColorCount == 2;
+        GreenImage.fillCenter = SelectColorCount == 3;
     }
 
     private void HandleColorInput()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SelectColorCount = Math.Clamp(SelectColorCount + 1, 1, 3);
+            // Cycle increment logic: If at max (3), loop back to 1
+            SelectColorCount = SelectColorCount == 3 ? 1 : SelectColorCount + 1;
             UpdateActiveCubes();
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            SelectColorCount = Math.Clamp(SelectColorCount - 1, 1, 3);
+            // Cycle decrement logic: If at min (1), loop back to 3
+            SelectColorCount = SelectColorCount == 1 ? 3 : SelectColorCount - 1;
             UpdateActiveCubes();
         }
     }
 
-  
+    
+
+
+
 }
