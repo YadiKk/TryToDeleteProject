@@ -6,23 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AllPorjects/Scenes/MainMenu.unity
+    path: "Assets/AllPorjects/Scenes/MOB\u0130LE/MainMenu.unity"
     guid: e2ee9605f8958974eb7a4e4f48839e57
   - enabled: 1
-    path: "Assets/AllPorjects/Scenes/MOB\u0130LE/MOB\u0130LEdevelopScene.unity"
-    guid: ae3d50b0d2bf8dc4b8ed9c546ddc60a9
+    path: "Assets/AllPorjects/Scenes/MOB\u0130LE/Level.unity"
+    guid: 73c49c281146f83449b335543802416c
   - enabled: 1
-    path: Assets/AllPorjects/Scenes/PC/PCdevelopScene.unity
-    guid: 5c91d6e348dac044eab48f6547b5cde5
-  - enabled: 0
-    path: Assets/AllPorjects/Scenes/Level3.unity
-    guid: 1ce6ad6ae58fb1e4c9291b9f88c7f88f
-  - enabled: 0
-    path: Assets/AllPorjects/Scenes/Level4.unity
-    guid: 56ab4652a0de0014d834b174a773f665
-  - enabled: 0
-    path: Assets/AllPorjects/Scenes/TestLevel.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: "Assets/AllPorjects/Scenes/MOB\u0130LE/Level 1.unity"
+    guid: bb317c7395d433b4694ddbab5038fe4c
+  - enabled: 1
+    path: "Assets/AllPorjects/Scenes/MOB\u0130LE/Level 2.unity"
+    guid: 1b4086b1e407d6745a17403795dc3a05
+  - enabled: 1
+    path: "Assets/AllPorjects/Scenes/MOB\u0130LE/Level 3.unity"
+    guid: d2622230d7d30eb4bba94126886f20e3
+  - enabled: 1
+    path: "Assets/AllPorjects/Scenes/MOB\u0130LE/Level 4.unity"
+    guid: 01233058a722d814b9f4d241483833ec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

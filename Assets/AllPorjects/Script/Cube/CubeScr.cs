@@ -14,7 +14,7 @@ public class CubeScr : MonoBehaviour
     [Header("Color Settings")]
     [Range(1, 3)] public int SelectColorCount = 2;
     [SerializeField] Image RedImage, BlueImage, GreenImage;
-    [SerializeField] Image Crice;
+    [SerializeField] GameObject Crice;
     [SerializeField] float rotLerp;
     [Header("Cube Settings")]
     private Dictionary<string, List<GameObject>> colorCubes;
@@ -139,14 +139,36 @@ public class CubeScr : MonoBehaviour
         }
     }
 
+    public void UpdateOutlinesRed()
+    {
+        SelectColorCount = 1;
+        LeanTween.rotateZ(Crice, -60f, rotLerp)
+                 .setEase(LeanTweenType.easeOutQuad);
+        UpdateActiveCubes();
+        UpdateOutlines();
+    }
+
+    public void UpdateOutlinesBlue() {
+        SelectColorCount = 2;
+        LeanTween.rotateZ(Crice, 60f, rotLerp)
+                 .setEase(LeanTweenType.easeOutQuad);
+        UpdateActiveCubes();
+        UpdateOutlines();
+    }
+
+    public void UpdateOutlinesGreen() {
+        SelectColorCount = 3;
+        LeanTween.
+            rotateZ(Crice, 
+          180f, 
+          rotLerp)
+                .setEase(LeanTweenType.easeOutQuad);
+        UpdateActiveCubes();
+        UpdateOutlines();
+    }
+
     private void UpdateOutlines()
     {
-        if(SelectColorCount == 1) LeanTween.rotateZ(Crice.gameObject, -60f, rotLerp)
-                 .setEase(LeanTweenType.easeOutQuad);
-        if (SelectColorCount == 2) LeanTween.rotateZ(Crice.gameObject, 60f, rotLerp)
-                 .setEase(LeanTweenType.easeOutQuad);
-        if (SelectColorCount == 3) LeanTween.rotateZ(Crice.gameObject, 180f, rotLerp)
-                .setEase(LeanTweenType.easeOutQuad);
         RedImage.fillCenter = SelectColorCount == 1;
         BlueImage.fillCenter = SelectColorCount == 2;
         GreenImage.fillCenter = SelectColorCount == 3;
