@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameStatus : MonoBehaviour
 {
     [Header("script")]
-    public GameandLevelMaanager GameandLevelMaanagerScript;
+   // public GameandLevelMaanager GameandLevelMaanagerScript;
     public CubeScr CubeScrScript;
     public MoveCube MoveCubeScript;
 
@@ -22,10 +22,10 @@ public class GameStatus : MonoBehaviour
 
     private void Start()
     {
-        GameandLevelMaanagerScript = FindAnyObjectByType<GameandLevelMaanager>();
+        //GameandLevelMaanagerScript = FindAnyObjectByType<GameandLevelMaanager>();
         CubeScrScript = FindAnyObjectByType<CubeScr>();
         MoveCubeScript = FindAnyObjectByType<MoveCube>();
-        GameandLevelMaanagerScript.enabled = GameStart;
+       // GameandLevelMaanagerScript.enabled = GameStart;
         CubeScrScript.enabled = GameStart;
         MoveCubeScript.enabled = GameStart;
         GameLoading = true;
@@ -94,7 +94,7 @@ public class GameStatus : MonoBehaviour
     {
 
 
-        GameandLevelMaanagerScript.enabled = GameStart;
+      // GameandLevelMaanagerScript.enabled = GameStart;
         CubeScrScript.enabled = GameStart;
         MoveCubeScript.enabled = GameStart;
         GameStopPanel.SetActive(!GameStart);
