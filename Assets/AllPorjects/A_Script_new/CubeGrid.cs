@@ -4,7 +4,10 @@ using UnityEngine;
 public class CubeGrid : MonoBehaviour
 {
     public HashSet<Vector3> CubePos = new HashSet<Vector3>();
-    private Dictionary<string, List<GameObject>> colorCubes;
+    public Dictionary<string, List<GameObject>> colorCubes;
+    //cord
+    public Dictionary<Vector3, GameObject> cubeDictionary = new Dictionary<Vector3, GameObject>();
+
 
     public int Cubetotalcout;
     public int Now_Cubetotalcout;
@@ -17,8 +20,6 @@ public class CubeGrid : MonoBehaviour
             { "Green", new List<GameObject>() },
             { "Blue", new List<GameObject>() }
         };
-
-
         InitializeCubes();
        
     }
@@ -37,7 +38,7 @@ public class CubeGrid : MonoBehaviour
 
     }
 
-    private void AddCubesToCategory(string category, string tag)
+    public void AddCubesToCategory(string category, string tag)
     {
         GameObject[] cubes = GameObject.FindGameObjectsWithTag(tag);
         foreach (var cube in cubes)
@@ -46,7 +47,12 @@ public class CubeGrid : MonoBehaviour
 
             cube.gameObject.name = tag;
             Vector3 position = cube.transform.position;
-            CubePos.Add(position);
+            //CubePos.Add(position);
+            if (!cubeDictionary.ContainsKey(position))
+            {
+                cubeDictionary.Add(position, cube);
+            }
+
             switch (tag)
             {
                 case "1":
@@ -63,6 +69,7 @@ public class CubeGrid : MonoBehaviour
 
 
         }
+        
     }
 
    
