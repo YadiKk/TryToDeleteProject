@@ -1,112 +1,204 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class CubeScr : MonoBehaviour
 {
     [Header("Sphere Settings")]
-    [SerializeField] float sphereRadius = 1f; // Çevre kontrol yarıçapı
+    [SerializeField] float sphereRadius;
 
-    private HashSet<Vector3> cubePositions = new HashSet<Vector3>(); // Küp pozisyonları
-    private Vector3[] directions = new Vector3[]
-    {
-        Vector3.up,
-        Vector3.down,
-        Vector3.right,
-        Vector3.left,
-        Vector3.forward,
-        Vector3.back
-    };
+
+    [Header("Color Settings")]
+    [Range(1, 3)] public int SelectColorCount = 2;
+    [SerializeField] Image RedImage, BlueImage, GreenImage;
+    [SerializeField] GameObject Crice;
+    [SerializeField] float rotLerp;
+    [Header("Cube Settings")]
+    private Dictionary<string, List<GameObject>> colorCubes;
 
     public int totalCubeCount;
     public int activeCubeCount;
 
-    public enum CubeStatus { CanMove, CantMoveNotFinish, LevelComplete }
-    public CubeStatus status;
-
-
-    [Header("Grid Settings")]
-    public Vector3 gridPosition; // Küpün mevcut grid konumu
-    public float gridSize = 1f; // Her adımın boyutu
-
-    [Header("Boundaries")]
-    public float minX = -5f;
-    public float maxX = 5f;
-    public float minZ = -5f;
-    public float maxZ = 5f;
-
-    // Yeni konumu sınırlarla kontrol et
-    public bool IsValidPosition(Vector3 targetPosition)
+    private void Awake()
     {
-        return targetPosition.x >= minX && targetPosition.x <= maxX &&
-               targetPosition.z >= minZ && targetPosition.z <= maxZ;
-    }
-
-
-    private void Start()
-    {
-        InitializeCubes();
-    }
-
-    void InitializeCubes()
-    {
-        // Tüm küpleri sahneden bul ve pozisyonlarını kaydet
-        GameObject[] cubes = GameObject.FindGameObjectsWithTag("Cube"); // Küp tag'i kullandım, senin tag'lara göre düzenle
-        foreach (var cube in cubes)
+        colorCubes = new Dictionary<string, List<GameObject>>
         {
-            cubePositions.Add(cube.transform.position);
-        }
-        totalCubeCount = cubePositions.Count;
-        activeCubeCount = totalCubeCount;
+            { "Red", new List<GameObject>() },
+            { "Green", new List<GameObject>() },
+            { "Blue", new List<GameObject>() }
+        };
+
+
+        InitializeCubes();
     }
 
     private void Update()
     {
-        EnvironmentSyncControl();
+        HandleColorInput();
+        TracksDeleteCube();
     }
 
-    public void EnvironmentSyncControl()
+    public void InitializeCubes()
     {
-        bool hasPath = false;
+        AddCubesToCategory("Red", "1");
+        AddCubesToCategory("Green", "2");
+        AddCubesToCategory("Blue", "3");
 
-        // Player'ın etrafındaki 6 yönü kontrol et
-        foreach (var dir in directions)
+        totalCubeCount = colorCubes["Red"].Count + colorCubes["Green"].Count + colorCubes["Blue"].Count;
+        activeCubeCount = totalCubeCount;
+
+
+        Invoke("UpdateActiveCubes", FindAnyObjectByType<GameStatus>().loadingValueTime);
+
+    }
+
+    public void LeftChangeBTN()
+    {
+        SelectColorCount = Math.Clamp(SelectColorCount - 1, 1, 3);
+        UpdateActiveCubes();
+    }
+    public void ChangeBTN()
+    {
+        SelectColorCount = SelectColorCount == 3 ? 1 : SelectColorCount + 1;
+        UpdateActiveCubes();
+    }
+    public void RightChangeBTN()
+    {
+        SelectColorCount = Math.Clamp(SelectColorCount + 1, 1, 3);
+        UpdateActiveCubes();
+    }
+
+    void TracksDeleteCube()
+    {
+        Vector3 origin = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(origin, sphereRadius);
+        foreach (Collider collider in colliders)
         {
-            Vector3 targetPosition = transform.position + dir;
-            if (cubePositions.Contains(targetPosition))
+            if (collider != null)
             {
-                hasPath = true;
-                break; // Bir yön bulunursa döngüden çık
+                Destroy(collider.gameObject);
+                activeCubeCount--;
+                return;
             }
         }
-
-        // Kalan küp kontrolü
-        if (activeCubeCount == 0)
-        {
-            status = CubeStatus.LevelComplete;
-            Debug.Log("LEVEL COMPLETE!");
-            // Geri sayım veya level bitiş işlemleri burada başlatılabilir
-        }
-        else if (hasPath)
-        {
-            status = CubeStatus.CanMove;
-            Debug.Log("WAY FOUND!");
-        }
-        else
-        {
-            status = CubeStatus.CantMoveNotFinish;
-            Debug.Log("NO WAY!");
-        }
     }
 
-  
-   
-
-    // Küp pozisyonlarını görselleştirmek için
     private void OnDrawGizmos()
     {
         Vector3 origin = transform.position;
 
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(origin, sphereRadius);
+
+        Collider[] colliders = Physics.OverlapSphere(origin, sphereRadius);
+        Gizmos.color = colliders.Length > 0 ? Color.red : Color.green;
+        Gizmos.DrawWireSphere(origin, sphereRadius);
     }
+
+
+    private void AddCubesToCategory(string category, string tag)
+    {
+        GameObject[] cubes = GameObject.FindGameObjectsWithTag(tag);
+        foreach (var cube in cubes)
+        {
+            colorCubes[category].Add(cube);
+            cube.gameObject.name = tag;
+            switch (tag)
+            {
+                case "1":
+                    cube.gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    break;
+                case "2":
+                    cube.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    break;
+                case "3":
+                    cube.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                    break;
+
+            }
+
+
+        }
+    }
+
+    public void UpdateActiveCubes()
+    {
+        EnableCubesByCategory("Red", SelectColorCount == 1);
+        EnableCubesByCategory("Green", SelectColorCount == 2);
+        EnableCubesByCategory("Blue", SelectColorCount == 3);
+
+
+
+        UpdateOutlines();
+    }
+
+    private void EnableCubesByCategory(string category, bool isActive)
+    {
+        foreach (var cube in colorCubes[category])
+        {
+            if (cube != null) cube.SetActive(isActive);
+        }
+    }
+
+    public void UpdateOutlinesRed()
+    {
+        SelectColorCount = 1;
+        LeanTween.rotateZ(Crice, -60f, rotLerp)
+                 .setEase(LeanTweenType.easeOutQuad);
+        UpdateActiveCubes();
+        UpdateOutlines();
+    }
+
+    public void UpdateOutlinesBlue()
+    {
+        SelectColorCount = 2;
+        LeanTween.rotateZ(Crice, 60f, rotLerp)
+                 .setEase(LeanTweenType.easeOutQuad);
+        UpdateActiveCubes();
+        UpdateOutlines();
+    }
+
+    public void UpdateOutlinesGreen()
+    {
+        SelectColorCount = 3;
+        LeanTween.
+            rotateZ(Crice,
+          180f,
+          rotLerp)
+                .setEase(LeanTweenType.easeOutQuad);
+        UpdateActiveCubes();
+        UpdateOutlines();
+    }
+
+    private void UpdateOutlines()
+    {
+        RedImage.fillCenter = SelectColorCount == 1;
+        BlueImage.fillCenter = SelectColorCount == 2;
+        GreenImage.fillCenter = SelectColorCount == 3;
+    }
+
+    private void HandleColorInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Cycle increment logic: If at max (3), loop back to 1
+            SelectColorCount = SelectColorCount == 3 ? 1 : SelectColorCount + 1;
+            UpdateActiveCubes();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // Cycle decrement logic: If at min (1), loop back to 3
+            SelectColorCount = SelectColorCount == 1 ? 3 : SelectColorCount - 1;
+            UpdateActiveCubes();
+        }
+    }
+
+
+
+
+
 }

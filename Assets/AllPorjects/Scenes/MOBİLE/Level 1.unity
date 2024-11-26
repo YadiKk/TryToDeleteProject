@@ -549,13 +549,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849135321}
+  - component: {fileID: 849135322}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &849135321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -563,19 +564,41 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849135320}
-  m_LocalRotation: {x: -0, y: -0.10501406, z: -0, w: 0.9944708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1885741164}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -12.056, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2.1, y: 1.105}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &849135322
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849135320}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8be35d43756ea84887f5ab7c053bdf8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &860045843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,8 +1287,8 @@ Camera:
   m_GameObject: {fileID: 1885741161}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.4509804, g: 0.654902, b: 0.96862745, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1288,7 +1311,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 62.1
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1660,11 +1683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &530215538874540448 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7512304697503458924, guid: 396ea2770bec0944cbbf6182e6b59cb2, type: 3}
-  m_PrefabInstance: {fileID: 2798457973994386517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &852446250310303289 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4373918701071152324, guid: 396ea2770bec0944cbbf6182e6b59cb2, type: 3}
@@ -1775,7 +1793,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 3239109737332183499}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0806b6fc678aea45a67a8be778a9c49, type: 3}
   m_Name: 
@@ -1946,7 +1964,7 @@ PrefabInstance:
       objectReference: {fileID: 2505036877846086692}
     - target: {fileID: 7512304697503458924, guid: 396ea2770bec0944cbbf6182e6b59cb2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8104341642443367399, guid: 396ea2770bec0944cbbf6182e6b59cb2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1975,16 +1993,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4118120510247133598, guid: 37aca7caed8f14c49a70fd76e57bb6e9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4118120510247133598, guid: 37aca7caed8f14c49a70fd76e57bb6e9, type: 3}
       propertyPath: loadingPanel
       value: 
-      objectReference: {fileID: 530215538874540448}
+      objectReference: {fileID: 849135320}
     - target: {fileID: 4118120510247133598, guid: 37aca7caed8f14c49a70fd76e57bb6e9, type: 3}
       propertyPath: GameStopPanel
       value: 
       objectReference: {fileID: 908787767741023080}
+    - target: {fileID: 4118120510247133598, guid: 37aca7caed8f14c49a70fd76e57bb6e9, type: 3}
+      propertyPath: loadingValueTime
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4795977180133705094, guid: 37aca7caed8f14c49a70fd76e57bb6e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 109.168686
@@ -2239,6 +2261,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3220743511269002095, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874221127647349202, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: m_BackGroundColor.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8211908468685515080, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}

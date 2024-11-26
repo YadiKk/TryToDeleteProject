@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameStatus : MonoBehaviour
 {
     [Header("script")]
-   // public GameandLevelMaanager GameandLevelMaanagerScript;
+    public GameandLevelMaanager GameandLevelMaanagerScript;
     public CubeScr CubeScrScript;
     public MoveCube MoveCubeScript;
 
@@ -22,10 +22,10 @@ public class GameStatus : MonoBehaviour
 
     private void Start()
     {
-        //GameandLevelMaanagerScript = FindAnyObjectByType<GameandLevelMaanager>();
+        GameandLevelMaanagerScript = FindAnyObjectByType<GameandLevelMaanager>();
         CubeScrScript = FindAnyObjectByType<CubeScr>();
         MoveCubeScript = FindAnyObjectByType<MoveCube>();
-       // GameandLevelMaanagerScript.enabled = GameStart;
+        GameandLevelMaanagerScript.enabled = GameStart;
         CubeScrScript.enabled = GameStart;
         MoveCubeScript.enabled = GameStart;
         GameLoading = true;
@@ -38,22 +38,22 @@ public class GameStatus : MonoBehaviour
             loadingPanel.SetActive(true);
             Loading_Game();
         }
-        
-        else 
+
+        else
         {
             loadingPanel.SetActive(false);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameStart = !GameStart;
             GamePauseAction();
         }
     }
-        
+
     void Loading_Game()
     {
-        
+
         loadingValue += Time.deltaTime;
         Debug.Log(Mathf.FloorToInt(loadingValue));
         if (Mathf.FloorToInt(loadingValue) >= loadingValueTime)
@@ -71,13 +71,13 @@ public class GameStatus : MonoBehaviour
     }
     public void GameMenu_Btn()
     {
-        
+
         SceneManager.LoadScene(0);
     }
     public void GameStart_Btn()
     {
         Scene CurrnetScne = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(CurrnetScne.buildIndex +1);
+        SceneManager.LoadScene(CurrnetScne.buildIndex + 1);
     }
     public void GameRestart_Btn()
     {
@@ -94,7 +94,7 @@ public class GameStatus : MonoBehaviour
     {
 
 
-      // GameandLevelMaanagerScript.enabled = GameStart;
+        GameandLevelMaanagerScript.enabled = GameStart;
         CubeScrScript.enabled = GameStart;
         MoveCubeScript.enabled = GameStart;
         GameStopPanel.SetActive(!GameStart);
