@@ -1,5 +1,6 @@
 using GG.Infrastructure.Utils.Swipe;
 using Palmmedia.ReportGenerator.Core.Reporting.Builders;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeGridMove : MonoBehaviour
@@ -8,9 +9,11 @@ public class CubeGridMove : MonoBehaviour
     [Header("Cube Settings")]
     public GameObject CubePlayer;
     public Vector3 CubePlayerPos;
+    [SerializeField] Vector3 rot;
 
     public float _SPEED_OnGridMove;
     [SerializeField] private float lerpTime;
+    [SerializeField] private float Rotlerptime;
 
     [Header("Steps")]
     public int currentStepCount;
@@ -31,6 +34,7 @@ public class CubeGridMove : MonoBehaviour
     private void Update()
     {
         CubePlayer.transform.position = Vector3.Lerp(CubePlayer.transform.position, CubePlayerPos, lerpTime * Time.deltaTime);
+        
         environmentSyncControl(CubePlayerPos);
     }
 
@@ -50,12 +54,27 @@ public class CubeGridMove : MonoBehaviour
             case "Left": direction = Vector3.left; break;
             case "Up": direction = Vector3.up; break; // Change to forward for 3D up
             case "Down": direction = Vector3.down; break; // Change to back for 3D down
+            case "Forward": direction = Vector3.forward; break; // Change to back for 3D down
+            case "Back": direction = Vector3.back; break; // Change to back for 3D down
         }
         MoveToDirection(direction);
     }
 
+
+    // Dictionary for rotation changes
+    private Dictionary<Vector3, Vector3> rotationChanges = new Dictionary<Vector3, Vector3>
+{
+    { Vector3.right,    new Vector3(0f, -90f, 00f) },     // Rotate on x-axis upward
+    { Vector3.left, new Vector3(0f, 90f, 0f) },  // Rotate on x-axis downward
+    { Vector3.up, new Vector3(90f, 0f, 0f) },  // Rotate on y-axis right
+    { Vector3.down, new Vector3(-90f, 0f, 0f) }   // Rotate on y-axis left
+};
     private void MoveToDirection(Vector3 direction)
     {
+        
+        
+           
+        
         Vector3 targetPosition = CubePlayerPos + (direction * _SPEED_OnGridMove);
         
         // Example boundary check: Ensure movement is within a certain range
@@ -64,6 +83,13 @@ public class CubeGridMove : MonoBehaviour
             CubePlayerPos = targetPosition;
             deleteCubeGrid(CubePlayerPos);
             currentStepCount--;
+        }
+        else if(!IsValidPosition(targetPosition) && rotationChanges.ContainsKey(direction))
+        {
+            // Apply rotation change
+            rot += rotationChanges[direction];
+            // Smooth rotation
+            CubePlayer.gameObject.transform.eulerAngles = Vector3.Lerp(CubePlayer.transform.localEulerAngles, rot, Rotlerptime);
         }
     }
 

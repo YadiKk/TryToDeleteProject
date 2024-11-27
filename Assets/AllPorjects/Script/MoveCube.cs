@@ -42,6 +42,7 @@ public class MoveCube : MonoBehaviour
 
     private void Start()
     {
+        status = CubeStatus.CantMoveNotfinish;
         if (cubeScrScript == null) cubeScrScript = GameObject.FindAnyObjectByType<CubeScr>();
         MaxStepCount = cubeScrScript.activeCubeCount + addStepCount;
         saveStepCount = MaxStepCount;
@@ -51,8 +52,8 @@ public class MoveCube : MonoBehaviour
     }
     private void Update()
     {
-        //environmentSyncControl();
-
+        environmentSyncControl();
+        deleteCubeGrid(transform.position);
         //mobileControl();
         pcControl();
 
@@ -210,18 +211,58 @@ public class MoveCube : MonoBehaviour
         return 0;
     }
 
+    private bool IsValidPosition(Vector3 targetPosition)
+    {
+        if (cubeScrScript.cubeDictionary.ContainsKey(targetPosition))
+        {
+
+            return true;
+        }
+        else { return false; }
+        // Add any boundary or collision checks here if needed
+        // Example: return targetPosition.x >= 0 && targetPosition.z >= 0;
+        // Default to always valid
+    }
+    void deleteCubeGrid(Vector3 playerPos)
+    {
+        if (cubeScrScript.cubeDictionary.ContainsKey(playerPos))
+        {
+         
+
+
+            cubeScrScript.cubeDictionary.Remove(playerPos);
+
+            
+
+
+           
+            Debug.Log($"Cube removed at position {playerPos}");
+        }
+        else
+        {
+            Debug.Log("No cube found at the specified position.");
+        }
+    }
     public void environmentSyncControl()
     {
         // Initialize flags for each direction
         bool[] directionFlags = new bool[6];
 
         // Check each direction
-        directionFlags[0] = check_way(Vector3.up) > 0;      // up
-        directionFlags[1] = check_way(Vector3.down) > 0;    // down
-        directionFlags[2] = check_way(Vector3.right) > 0;   // right
-        directionFlags[3] = check_way(Vector3.left) > 0;    // left
-        directionFlags[4] = check_way(Vector3.forward) > 0; // forward
-        directionFlags[5] = check_way(Vector3.back) > 0;    // back
+        //directionFlags[0] = check_way(Vector3.up) > 0;      // up
+        //directionFlags[1] = check_way(Vector3.down) > 0;    // down
+        //directionFlags[2] = check_way(Vector3.right) > 0;   // right
+        //directionFlags[3] = check_way(Vector3.left) > 0;    // left
+        //directionFlags[4] = check_way(Vector3.forward) > 0; // forward
+        //directionFlags[5] = check_way(Vector3.back) > 0;    // back
+
+        directionFlags[0] = IsValidPosition(Vector3.up + transform.position);      // up
+        directionFlags[1] = IsValidPosition(Vector3.down + NowmoveCubePos);    // down
+        directionFlags[2] = IsValidPosition(Vector3.right + NowmoveCubePos);   // right
+        directionFlags[3] = IsValidPosition(Vector3.left + NowmoveCubePos);    // left
+        directionFlags[4] = IsValidPosition(Vector3.forward + NowmoveCubePos); // forward
+        directionFlags[5] = IsValidPosition(Vector3.back + NowmoveCubePos);
+        Debug.LogError(Vector3.back + transform.position);// back
 
         // Assign the flags to the respective variables
         up = directionFlags[0];
@@ -235,6 +276,7 @@ public class MoveCube : MonoBehaviour
         if (up || down || left || right || forwrd || back)
         {
             Debug.LogError("WAY!");
+            status = CubeStatus.CanMove;
         }
         else
         {
@@ -252,9 +294,10 @@ public class MoveCube : MonoBehaviour
     { Vector3.up, new Vector3(90f, 0f, 0f) },  // Rotate on y-axis right
     { Vector3.down, new Vector3(-90f, 0f, 0f) }   // Rotate on y-axis left
 };
-
+    
     void moveCube(int CheckDir, Vector3 dir)
     {
+        
         // If CheckDir is 0 and dir exists in the dictionary
         if (CheckDir == 0 && rotationChanges.ContainsKey(dir))
         {
@@ -265,7 +308,7 @@ public class MoveCube : MonoBehaviour
         }
         else
         {
-
+            
             switch (CheckDir)
             {
                 case 1:

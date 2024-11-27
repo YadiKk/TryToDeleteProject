@@ -452,6 +452,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 409053682}
+  - component: {fileID: 409053681}
+  - component: {fileID: 409053684}
   - component: {fileID: 409053683}
   m_Layer: 0
   m_Name: GameObject
@@ -460,6 +462,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &409053681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409053680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c218b39d04c3d39488cbf4a0e0bc07a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cubetotalcout: 0
+  Now_Cubetotalcout: 0
 --- !u!4 &409053682
 Transform:
   m_ObjectHideFlags: 0
@@ -496,6 +512,33 @@ MonoBehaviour:
   _sensetivity: 10
   _continuousDetection: 0
   _swipeDetectionMode: 2
+--- !u!114 &409053684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409053680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79e720b05f50ea408a8b4713907c741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CubeGridScrpt: {fileID: 409053681}
+  CubePlayer: {fileID: 1450532234}
+  CubePlayerPos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0}
+  _SPEED_OnGridMove: 1
+  lerpTime: 20
+  Rotlerptime: 1
+  currentStepCount: 99999
+  swipeListener: {fileID: 409053683}
+  up: 0
+  down: 0
+  right: 0
+  left: 0
+  forwrd: 0
+  back: 0
 --- !u!1 &431849797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,8 +1403,6 @@ GameObject:
   - component: {fileID: 1450532237}
   - component: {fileID: 1450532236}
   - component: {fileID: 1450532235}
-  - component: {fileID: 1450532240}
-  - component: {fileID: 1450532239}
   m_Layer: 9
   m_Name: Cubeplayer
   m_TagString: Untagged
@@ -1459,57 +1500,6 @@ Transform:
   - {fileID: 841099847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1450532239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450532234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03ec4c22fe8c7934f965328063b52384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sphereRadius: 0.5
-  SelectColorCount: 2
-  RedImage: {fileID: 0}
-  BlueImage: {fileID: 0}
-  GreenImage: {fileID: 0}
-  Crice: {fileID: 0}
-  rotLerp: 0
-  totalCubeCount: 0
-  activeCubeCount: 0
---- !u!114 &1450532240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450532234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b64f37490c58d14fab68e0448794173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  lerptime: 1
-  NowmoveCubePos: {x: 0, y: 0, z: 0}
-  rot: {x: 0, y: 0, z: 0}
-  status: 0
-  NowstepCount: 0
-  MaxStepCount: 5
-  addStepCount: 4
-  Hitdistance: 0
-  Dir_Check: 0
-  up: 0
-  down: 0
-  right: 0
-  left: 0
-  forwrd: 0
-  back: 0
-  swipeListener: {fileID: 409053683}
-  sphereRadius: 2
 --- !u!1 &1507842961
 GameObject:
   m_ObjectHideFlags: 0

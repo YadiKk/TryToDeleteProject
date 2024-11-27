@@ -18,7 +18,7 @@ public class CubeScr : MonoBehaviour
     [SerializeField] float rotLerp;
     [Header("Cube Settings")]
     private Dictionary<string, List<GameObject>> colorCubes;
-
+    public Dictionary<Vector3, GameObject> cubeDictionary = new Dictionary<Vector3, GameObject>();
     public int totalCubeCount;
     public int activeCubeCount;
 
@@ -106,6 +106,13 @@ public class CubeScr : MonoBehaviour
         {
             colorCubes[category].Add(cube);
             cube.gameObject.name = tag;
+
+            Vector3 position = cube.transform.position;
+            //CubePos.Add(position);
+            if (!cubeDictionary.ContainsKey(position))
+            {
+                cubeDictionary.Add(position, cube);
+            }
             switch (tag)
             {
                 case "1":
