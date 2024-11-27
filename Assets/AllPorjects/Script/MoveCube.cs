@@ -53,7 +53,7 @@ public class MoveCube : MonoBehaviour
     private void Update()
     {
         environmentSyncControl();
-        deleteCubeGrid(transform.position);
+        
         //mobileControl();
         pcControl();
 
@@ -67,6 +67,7 @@ public class MoveCube : MonoBehaviour
     }
     private void OnSwipe(string swipe)
     {
+        deleteCubeGrid(transform.position);
         switch (swipe)
         {
             case "Right":
@@ -79,10 +80,12 @@ public class MoveCube : MonoBehaviour
                 break;
             case "Up":
                 moveCube(check_way(Vector3.up), Vector3.up);
+
                 Debug.Log("Up Swipe");
                 break;
             case "Down":
                 moveCube(check_way(Vector3.down), Vector3.down);
+
                 Debug.Log("Down Swipe");
                 break;
         }
@@ -246,42 +249,23 @@ public class MoveCube : MonoBehaviour
     public void environmentSyncControl()
     {
         // Initialize flags for each direction
-        bool[] directionFlags = new bool[6];
-
-        // Check each direction
-        //directionFlags[0] = check_way(Vector3.up) > 0;      // up
-        //directionFlags[1] = check_way(Vector3.down) > 0;    // down
-        //directionFlags[2] = check_way(Vector3.right) > 0;   // right
-        //directionFlags[3] = check_way(Vector3.left) > 0;    // left
-        //directionFlags[4] = check_way(Vector3.forward) > 0; // forward
-        //directionFlags[5] = check_way(Vector3.back) > 0;    // back
-
-        directionFlags[0] = IsValidPosition(Vector3.up + transform.position);      // up
-        directionFlags[1] = IsValidPosition(Vector3.down + NowmoveCubePos);    // down
-        directionFlags[2] = IsValidPosition(Vector3.right + NowmoveCubePos);   // right
-        directionFlags[3] = IsValidPosition(Vector3.left + NowmoveCubePos);    // left
-        directionFlags[4] = IsValidPosition(Vector3.forward + NowmoveCubePos); // forward
-        directionFlags[5] = IsValidPosition(Vector3.back + NowmoveCubePos);
-        Debug.LogError(Vector3.back + transform.position);// back
-
-        // Assign the flags to the respective variables
-        up = directionFlags[0];
-        down = directionFlags[1];
-        right = directionFlags[2];
-        left = directionFlags[3];
-        forwrd = directionFlags[4];
-        back = directionFlags[5];
+        up = IsValidPosition(this.transform.localPosition + Vector3.up);
+        down = IsValidPosition(this.transform.localPosition + Vector3.down);
+        right = IsValidPosition(this.transform.localPosition + Vector3.right);
+        left = IsValidPosition(this.transform.localPosition + Vector3.left);
+        forwrd = IsValidPosition(this.transform.localPosition + Vector3.forward);
+        back = IsValidPosition(this.transform.localPosition + Vector3.back);
 
         // Check if there is any available path
         if (up || down || left || right || forwrd || back)
         {
-            Debug.LogError("WAY!");
+            Debug.Log("WAY!");
             status = CubeStatus.CanMove;
         }
         else
         {
             status = CubeStatus.CantMoveNotfinish;
-            Debug.LogError("NO WAY!");
+            Debug.Log("NO WAY!");
         }
     }
 

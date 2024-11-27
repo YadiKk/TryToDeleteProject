@@ -38,7 +38,7 @@ public class GameandLevelMaanager : MonoBehaviour
     private void Update()
     {
         ActiveCube_txt.text = cubeScrScript.activeCubeCount.ToString();
-        StepCout_txt.text = MovecubeScript.NowstepCount.ToString();
+        //StepCout_txt.text = MovecubeScript.NowstepCount.ToString();
         if (MovecubeScript.status == CubeStatus.CantMoveNotfinish)
         {
             delayTime -= Time.deltaTime;

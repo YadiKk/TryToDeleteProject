@@ -22,6 +22,7 @@ public class GameStatus : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         GameandLevelMaanagerScript = FindAnyObjectByType<GameandLevelMaanager>();
         CubeScrScript = FindAnyObjectByType<CubeScr>();
         MoveCubeScript = FindAnyObjectByType<MoveCube>();
@@ -76,11 +77,13 @@ public class GameStatus : MonoBehaviour
     }
     public void GameStart_Btn()
     {
+        Time.timeScale = 1;
         Scene CurrnetScne = SceneManager.GetActiveScene();
         SceneManager.LoadScene(CurrnetScne.buildIndex + 1);
     }
     public void GameRestart_Btn()
     {
+        Time.timeScale = 1;
         Scene CurrnetScne = SceneManager.GetActiveScene();
         SceneManager.LoadScene(CurrnetScne.buildIndex);
     }
