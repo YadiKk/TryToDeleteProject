@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using GG.Infrastructure.Utils;
 using GG.Infrastructure.Utils.Swipe;
+using TMPro;
 
 
 public class MoveCube : MonoBehaviour
@@ -26,6 +27,8 @@ public class MoveCube : MonoBehaviour
     [SerializeField] float Hitdistance;
     public int Dir_Check;
     [SerializeField] bool up, down, right, left, forwrd, back;
+    [SerializeField] bool[] directionCheck;
+    [SerializeField] bool[] directiontestFlags;
     [SerializeField] private SwipeListener swipeListener;
 
     [Space(12)]
@@ -40,6 +43,8 @@ public class MoveCube : MonoBehaviour
 
     CubeScr cubeScrScript;
 
+    
+
     private void Start()
     {
         status = CubeStatus.CantMoveNotfinish;
@@ -48,12 +53,15 @@ public class MoveCube : MonoBehaviour
         saveStepCount = MaxStepCount;
         NowstepCount = MaxStepCount;
 
+
+
         dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
+        
     }
     private void Update()
     {
         environmentSyncControl();
-        
+        deleteCubeGrid(transform.position);
         //mobileControl();
         pcControl();
 
@@ -61,13 +69,14 @@ public class MoveCube : MonoBehaviour
 
     }
 
+
+
     private void OnEnable()
     {
         swipeListener.OnSwipe.AddListener(OnSwipe);
     }
     private void OnSwipe(string swipe)
     {
-        deleteCubeGrid(transform.position);
         switch (swipe)
         {
             case "Right":
@@ -80,12 +89,10 @@ public class MoveCube : MonoBehaviour
                 break;
             case "Up":
                 moveCube(check_way(Vector3.up), Vector3.up);
-
                 Debug.Log("Up Swipe");
                 break;
             case "Down":
                 moveCube(check_way(Vector3.down), Vector3.down);
-
                 Debug.Log("Down Swipe");
                 break;
         }
@@ -216,56 +223,133 @@ public class MoveCube : MonoBehaviour
 
     private bool IsValidPosition(Vector3 targetPosition)
     {
-        if (cubeScrScript.cubeDictionary.ContainsKey(targetPosition))
+        Vector3Int intPosition = Vector3Int.RoundToInt(targetPosition);
+        Debug.Log("added: " + intPosition);
+        if (cubeScrScript.CubePos.Contains(intPosition))
         {
 
             return true;
         }
         else { return false; }
-        // Add any boundary or collision checks here if needed
-        // Example: return targetPosition.x >= 0 && targetPosition.z >= 0;
-        // Default to always valid
+       
     }
+
+    //private bool IsValidtestPosition(Vector3 targetPosition)
+    //{
+
+    //    Vector3Int intPosition = Vector3Int.RoundToInt(targetPosition);
+        
+    //    Debug.Log("added: " + intPosition);
+    //    if (CubeTestPos.Contains(intPosition))
+    //    {
+
+    //        return true;
+    //    }
+    //    else { return false; }
+
+    //}
+
     void deleteCubeGrid(Vector3 playerPos)
     {
-        if (cubeScrScript.cubeDictionary.ContainsKey(playerPos))
+        Vector3Int intPosition = Vector3Int.RoundToInt(playerPos);
+        if (cubeScrScript.CubePos.Contains(intPosition))
         {
-         
+            cubeScrScript.CubePos.Remove(intPosition);
 
-
-            cubeScrScript.cubeDictionary.Remove(playerPos);
-
-            
-
-
-           
-            Debug.Log($"Cube removed at position {playerPos}");
         }
-        else
-        {
-            Debug.Log("No cube found at the specified position.");
-        }
+
     }
+
+
+    //void deleteCubeGrid(Vector3 playerPos)
+    //{
+    //    if (cubeScrScript.CubePos.Contains(playerPos))
+    //    {
+
+
+
+    //        cubeScrScript.CubePos.Remove(playerPos);
+
+
+
+
+
+    //        Debug.Log($"Cube removed at position {playerPos}");
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("No cube found at the specified position.");
+    //    }
+    //}
     public void environmentSyncControl()
     {
         // Initialize flags for each direction
-        up = IsValidPosition(this.transform.localPosition + Vector3.up);
-        down = IsValidPosition(this.transform.localPosition + Vector3.down);
-        right = IsValidPosition(this.transform.localPosition + Vector3.right);
-        left = IsValidPosition(this.transform.localPosition + Vector3.left);
-        forwrd = IsValidPosition(this.transform.localPosition + Vector3.forward);
-        back = IsValidPosition(this.transform.localPosition + Vector3.back);
+        bool[] directionFlags = new bool[6];
+        directiontestFlags = new bool[6];
+        directionCheck = new bool[6];
+
+        // Check each direction
+        directionFlags[0] = check_way(Vector3.up) > 0;      // up
+        directionFlags[1] = check_way(Vector3.down) > 0;    // down
+        directionFlags[2] = check_way(Vector3.right) > 0;   // right
+        directionFlags[3] = check_way(Vector3.left) > 0;    // left
+        directionFlags[4] = check_way(Vector3.forward) > 0; // forward
+        directionFlags[5] = check_way(Vector3.back) > 0;    // back
+
+        directionCheck[0] = IsValidPosition(Vector3.up + NowmoveCubePos);      // up
+        directionCheck[1] = IsValidPosition(Vector3.down + NowmoveCubePos);    // down
+        directionCheck[2] = IsValidPosition(Vector3.left + NowmoveCubePos);   // right
+        directionCheck[3] = IsValidPosition(Vector3.right + NowmoveCubePos);    // left
+        directionCheck[4] = IsValidPosition(Vector3.forward + NowmoveCubePos); // forward
+        directionCheck[5] = IsValidPosition(Vector3.back + NowmoveCubePos);
+
+
+        //directiontestFlags[0] = IsValidtestPosition(Vector3.up + NowmoveCubePos);      // up
+        //directiontestFlags[1] = IsValidtestPosition(Vector3.down + NowmoveCubePos);    // down
+        //directiontestFlags[2] = IsValidtestPosition(Vector3.left + NowmoveCubePos);   // right
+        //directiontestFlags[3] = IsValidtestPosition(Vector3.right + NowmoveCubePos);    // left
+        //directiontestFlags[4] = IsValidtestPosition(Vector3.forward + NowmoveCubePos); // forward
+        //directiontestFlags[5] = IsValidtestPosition(Vector3.back + NowmoveCubePos);
+
+        Debug.Log(
+       "up" + (Vector3.up + NowmoveCubePos) +
+       "down" + (Vector3.down + NowmoveCubePos) +
+       "right" + (Vector3.right + NowmoveCubePos) +
+       "left" + (Vector3.left + NowmoveCubePos) +
+       "forward" + (Vector3.forward + NowmoveCubePos) +
+       "back" + (Vector3.back + NowmoveCubePos)
+            );
+
+        // Assign the flags to the respective variables
+        up = directionFlags[0];
+        down = directionFlags[1];
+        right = directionFlags[2];
+        left = directionFlags[3];
+        forwrd = directionFlags[4];
+        back = directionFlags[5];
 
         // Check if there is any available path
         if (up || down || left || right || forwrd || back)
         {
-            Debug.Log("WAY!");
+            Debug.LogError("WAY!");
             status = CubeStatus.CanMove;
         }
         else
         {
             status = CubeStatus.CantMoveNotfinish;
-            Debug.Log("NO WAY!");
+            Debug.LogError("NO WAY!");
+        }
+
+        if (directionCheck[0] || directionCheck[1] || directionCheck[2] || directionCheck[3] || directionCheck[4] || directionCheck[5])
+        {
+            Debug.LogError("WAY!");
+            status = CubeStatus.CanMove;
+        }
+
+        else
+        {
+
+            Debug.LogError("NOOOOOOOOOOOOOOOOOO WAY!");
         }
     }
 
@@ -278,12 +362,12 @@ public class MoveCube : MonoBehaviour
     { Vector3.up, new Vector3(90f, 0f, 0f) },  // Rotate on y-axis right
     { Vector3.down, new Vector3(-90f, 0f, 0f) }   // Rotate on y-axis left
 };
-    
+
     void moveCube(int CheckDir, Vector3 dir)
     {
-        
+
         // If CheckDir is 0 and dir exists in the dictionary
-        if (CheckDir == 0 && rotationChanges.ContainsKey(dir))
+        if (CheckDir == 0)
         {
             // Apply rotation change
             rot += rotationChanges[dir];
@@ -292,7 +376,7 @@ public class MoveCube : MonoBehaviour
         }
         else
         {
-            
+
             switch (CheckDir)
             {
                 case 1:

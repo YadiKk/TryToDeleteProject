@@ -2847,6 +2847,78 @@ PrefabInstance:
       propertyPath: swipeListener
       value: 
       objectReference: {fileID: 6205554202909483135}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: Cubes.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 935277772}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 176160754}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1912112012}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 876448708}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1169463120}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[5]'
+      value: 
+      objectReference: {fileID: 758448630}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1147936703}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1677464299}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[8]'
+      value: 
+      objectReference: {fileID: 860045843}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[9]'
+      value: 
+      objectReference: {fileID: 2106028191}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[10]'
+      value: 
+      objectReference: {fileID: 684353247}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[11]'
+      value: 
+      objectReference: {fileID: 499906121}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[12]'
+      value: 
+      objectReference: {fileID: 2046226315}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[13]'
+      value: 
+      objectReference: {fileID: 1103272786}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[14]'
+      value: 
+      objectReference: {fileID: 1376581400}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[15]'
+      value: 
+      objectReference: {fileID: 1180977059}
+    - target: {fileID: 9188584470472297002, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      propertyPath: 'Cubes.Array.data[16]'
+      value: 
+      objectReference: {fileID: 1531738129}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

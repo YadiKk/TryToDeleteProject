@@ -1,0 +1,1142 @@
+fileFormatVersion: 2
+guid: e418606c9f7ff054693d6bba2f735da9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ogurluqicon_6
+      rect:
+        serializedVersion: 2
+        x: 2873
+        y: 2530
+        width: 1016
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 133, y: 100, z: 133, w: 100}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d19fa580516d304981375da9ddbfc32
+      internalID: -446733913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 2638
+        width: 804
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89590187a8074b4496cf0025cd140eb
+      internalID: 1280571572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_8
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 2326
+        width: 350
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92bef314cc6114e4fa40ddf1c058ba02
+      internalID: -1138741074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_10
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 2338
+        width: 338
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1456fd1f96b90d48847215a865978ae
+      internalID: 1170631686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_11
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 2326
+        width: 734
+        height: 550
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4905296c128a834b895e3361547392c
+      internalID: 655189865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_20
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 2314
+        width: 746
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b49bdbfffcdd9246a4f5ca3f163a6bb
+      internalID: 2016503315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_27
+      rect:
+        serializedVersion: 2
+        x: 3467
+        y: 2002
+        width: 494
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c6350ec0353934789cbba9808531af
+      internalID: -2117240030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_29
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 2026
+        width: 541
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79feab4770d989a428969976364b96a8
+      internalID: 1742228421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_39
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1175
+        width: 482
+        height: 1069
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe4d51704bd70640b6470d7de1be991
+      internalID: 1944644967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_41
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 1966
+        width: 876
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7052e9fd5f642a64293ffd249fc1465a
+      internalID: 539306509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_48
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1882
+        width: 538
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 125, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf35e868b63dd124cb76f5f5f771e088
+      internalID: 662228455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_56
+      rect:
+        serializedVersion: 2
+        x: 2435
+        y: 1738
+        width: 1526
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43a062d5d37b1c498f8626f0eb7ecd5
+      internalID: 1412937355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_62
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 1468
+        width: 672
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef64d4bcb0c65e4f9565c81f2ce7c16
+      internalID: -824144985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_63
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 1379
+        width: 382
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37def009b9b52c42ab21a993d5d081a
+      internalID: -1729345446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_71
+      rect:
+        serializedVersion: 2
+        x: 2915
+        y: 1139
+        width: 1034
+        height: 529
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc37e4e8d635177408fe3ada8cec26fd
+      internalID: -1525834991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_75
+      rect:
+        serializedVersion: 2
+        x: 2213
+        y: 1115
+        width: 464
+        height: 481
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 112, y: 112, z: 112, w: 112}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7483a0f6144b5141bb2749efa7ddaa0
+      internalID: 1583944168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_86
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 71
+        width: 781
+        height: 1190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba18796b42b2ad428e6546b56a8d62d
+      internalID: 809403519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_87
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 899
+        width: 420
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a578c39ab20a5a4a8bcf05b45af7635
+      internalID: 1995286905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_94
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 101
+        width: 630
+        height: 991
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 134, y: 134, z: 134, w: 134}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc4fb88681f9a346b569bb28a395d1b
+      internalID: 976992438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_99
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 827
+        width: 229
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f36d39a025f1942b7a535db1a0d6fd
+      internalID: 299156065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_100
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 827
+        width: 230
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8dea43a62b597e4db10b81c625871d5
+      internalID: 1207394880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_101
+      rect:
+        serializedVersion: 2
+        x: 3239
+        y: 827
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d0ccbf2318a9c4f9f2dd06153969da
+      internalID: -848311455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_102
+      rect:
+        serializedVersion: 2
+        x: 3497
+        y: 827
+        width: 224
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305243c65fb3bdf4ca4c0e62c384d6fb
+      internalID: -1582983950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_103
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 827
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45ff87db75c59449a49e602e5a9a838
+      internalID: -3726732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_106
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 575
+        width: 230
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd16c190ca4fd145b3936157dc07b3d
+      internalID: 743920364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_107
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 575
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a321877767d39f34ebcf8834a88ab792
+      internalID: 349908232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_108
+      rect:
+        serializedVersion: 2
+        x: 3239
+        y: 575
+        width: 218
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c71e1292bb75994b8f78996b88f6520
+      internalID: 1988585881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_109
+      rect:
+        serializedVersion: 2
+        x: 3491
+        y: 575
+        width: 226
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfd3aaeea85bb746859d21b4cdf6f7b
+      internalID: 590256486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_110
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 575
+        width: 230
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11311cba9b13d134db32b39622a043bf
+      internalID: 790262711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_112
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 78
+        width: 927
+        height: 698
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 134, y: 106, z: 134, w: 105}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77c07f21e1f7c74da0b2de771005938
+      internalID: -1436337396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_117
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 323
+        width: 229
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48de3bba075f4f34abf68b325f6a53c1
+      internalID: 2052046339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_118
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 323
+        width: 230
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412245d333f77464f8d045c663e8743e
+      internalID: -2065224766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_119
+      rect:
+        serializedVersion: 2
+        x: 3239
+        y: 323
+        width: 229
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d38f34e676afd498e3782a19db55a7
+      internalID: 2060723383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_120
+      rect:
+        serializedVersion: 2
+        x: 3491
+        y: 326
+        width: 230
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d675f691e50fdf499f90fc4bc71e830
+      internalID: -1109500830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_121
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 323
+        width: 230
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43226290f65f9d64aaf49c2354e99d0d
+      internalID: 766740708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_122
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 87
+        width: 230
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f91e3bc8a43e3e40b04ec9b7ef99a69
+      internalID: 1312345999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_123
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 83
+        width: 230
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c5dce9d9f0efa439fdde6cff1c8539
+      internalID: 26820390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_124
+      rect:
+        serializedVersion: 2
+        x: 3239
+        y: 87
+        width: 218
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770d1c91b9bcc8045bfe8d34c9e161ac
+      internalID: -1611648451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_125
+      rect:
+        serializedVersion: 2
+        x: 3491
+        y: 87
+        width: 219
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c806d3dfea2c9e1439baa579cb0f8755
+      internalID: -1128008199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ogurluqicon_127
+      rect:
+        serializedVersion: 2
+        x: 3757
+        y: 83
+        width: 220
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd83bf1dc04abf845b055c6248d9053e
+      internalID: 1205732117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3d16ec99f7897a0408cc39d8419c25e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ogurluqicon_0: -163183874
+      ogurluqicon_1: -324770872
+      ogurluqicon_10: 1170631686
+      ogurluqicon_100: 1207394880
+      ogurluqicon_101: -848311455
+      ogurluqicon_102: -1582983950
+      ogurluqicon_103: -3726732
+      ogurluqicon_104: -108893553
+      ogurluqicon_105: 806537926
+      ogurluqicon_106: 743920364
+      ogurluqicon_107: 349908232
+      ogurluqicon_108: 1988585881
+      ogurluqicon_109: 590256486
+      ogurluqicon_11: 655189865
+      ogurluqicon_110: 790262711
+      ogurluqicon_111: 1648346170
+      ogurluqicon_112: -1436337396
+      ogurluqicon_113: -656017466
+      ogurluqicon_114: 1866871931
+      ogurluqicon_115: 1286735830
+      ogurluqicon_116: 996864715
+      ogurluqicon_117: 2052046339
+      ogurluqicon_118: -2065224766
+      ogurluqicon_119: 2060723383
+      ogurluqicon_12: 924016276
+      ogurluqicon_120: -1109500830
+      ogurluqicon_121: 766740708
+      ogurluqicon_122: 1312345999
+      ogurluqicon_123: 26820390
+      ogurluqicon_124: -1611648451
+      ogurluqicon_125: -1128008199
+      ogurluqicon_126: 1275087116
+      ogurluqicon_127: 1205732117
+      ogurluqicon_128: 554433419
+      ogurluqicon_129: -184514227
+      ogurluqicon_13: -2014048437
+      ogurluqicon_130: -814132238
+      ogurluqicon_131: 727317580
+      ogurluqicon_14: 161485243
+      ogurluqicon_15: -214439859
+      ogurluqicon_16: -207976217
+      ogurluqicon_17: 1239448820
+      ogurluqicon_18: -1181880381
+      ogurluqicon_19: -847934632
+      ogurluqicon_2: 588381044
+      ogurluqicon_20: 2016503315
+      ogurluqicon_21: 1837410708
+      ogurluqicon_22: 674642452
+      ogurluqicon_23: 1795437443
+      ogurluqicon_24: 1837978984
+      ogurluqicon_25: -132253867
+      ogurluqicon_26: -219140942
+      ogurluqicon_27: -2117240030
+      ogurluqicon_28: -864420551
+      ogurluqicon_29: 1742228421
+      ogurluqicon_3: 8069809
+      ogurluqicon_30: 353380197
+      ogurluqicon_31: -113858620
+      ogurluqicon_32: 813280779
+      ogurluqicon_33: -2038532948
+      ogurluqicon_34: -25126256
+      ogurluqicon_35: -395463916
+      ogurluqicon_36: -449832160
+      ogurluqicon_37: 362614935
+      ogurluqicon_38: 1268260967
+      ogurluqicon_39: 1944644967
+      ogurluqicon_4: 1129687230
+      ogurluqicon_40: 1848058718
+      ogurluqicon_41: 539306509
+      ogurluqicon_42: 867284239
+      ogurluqicon_43: -485277591
+      ogurluqicon_44: 1408376415
+      ogurluqicon_45: -701817375
+      ogurluqicon_46: -1282050013
+      ogurluqicon_47: 497912399
+      ogurluqicon_48: 662228455
+      ogurluqicon_49: 45830623
+      ogurluqicon_5: -1123289499
+      ogurluqicon_50: 1810223531
+      ogurluqicon_51: -366227907
+      ogurluqicon_52: -1295008920
+      ogurluqicon_53: -1347672873
+      ogurluqicon_54: 75194589
+      ogurluqicon_55: -114483189
+      ogurluqicon_56: 1412937355
+      ogurluqicon_57: 286540094
+      ogurluqicon_58: -717737319
+      ogurluqicon_59: 788751235
+      ogurluqicon_6: -446733913
+      ogurluqicon_60: -2072727131
+      ogurluqicon_61: 1598994379
+      ogurluqicon_62: -824144985
+      ogurluqicon_63: -1729345446
+      ogurluqicon_64: 511270537
+      ogurluqicon_65: 1542895687
+      ogurluqicon_66: 143569542
+      ogurluqicon_67: 1320561586
+      ogurluqicon_68: -339500772
+      ogurluqicon_69: -1819565427
+      ogurluqicon_7: 1280571572
+      ogurluqicon_70: 640083386
+      ogurluqicon_71: -1525834991
+      ogurluqicon_72: -234309669
+      ogurluqicon_73: 521849874
+      ogurluqicon_74: 1230566686
+      ogurluqicon_75: 1583944168
+      ogurluqicon_76: -1800471922
+      ogurluqicon_77: 341232077
+      ogurluqicon_78: -21589284
+      ogurluqicon_79: 1447419707
+      ogurluqicon_8: -1138741074
+      ogurluqicon_80: 1776060073
+      ogurluqicon_81: -713999736
+      ogurluqicon_82: -1535346818
+      ogurluqicon_83: -1118026645
+      ogurluqicon_84: -1048096507
+      ogurluqicon_85: -12928958
+      ogurluqicon_86: 809403519
+      ogurluqicon_87: 1995286905
+      ogurluqicon_88: -1374372844
+      ogurluqicon_89: -1746777847
+      ogurluqicon_9: -103678213
+      ogurluqicon_90: -1943151815
+      ogurluqicon_91: -256801518
+      ogurluqicon_92: -452201926
+      ogurluqicon_93: -40651419
+      ogurluqicon_94: 976992438
+      ogurluqicon_95: -931304195
+      ogurluqicon_96: 603210319
+      ogurluqicon_97: -815293837
+      ogurluqicon_98: -1898195346
+      ogurluqicon_99: 299156065
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

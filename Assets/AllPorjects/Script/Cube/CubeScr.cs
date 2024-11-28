@@ -9,7 +9,7 @@ public class CubeScr : MonoBehaviour
 {
     [Header("Sphere Settings")]
     [SerializeField] float sphereRadius;
-
+    [SerializeField] Material cubeMaterialICE, cubeMaterialSnows, cubeMaterialStone;
 
     [Header("Color Settings")]
     [Range(1, 3)] public int SelectColorCount = 2;
@@ -18,7 +18,8 @@ public class CubeScr : MonoBehaviour
     [SerializeField] float rotLerp;
     [Header("Cube Settings")]
     private Dictionary<string, List<GameObject>> colorCubes;
-    public Dictionary<Vector3, GameObject> cubeDictionary = new Dictionary<Vector3, GameObject>();
+    //public Dictionary<Vector3, GameObject> cubeDictionary = new Dictionary<Vector3, GameObject>();
+    public HashSet<Vector3Int> CubePos = new HashSet<Vector3Int>();
     public int totalCubeCount;
     public int activeCubeCount;
 
@@ -107,16 +108,15 @@ public class CubeScr : MonoBehaviour
             colorCubes[category].Add(cube);
             cube.gameObject.name = tag;
 
-            Vector3 position = cube.transform.position;
-            //CubePos.Add(position);
-            if (!cubeDictionary.ContainsKey(position))
-            {
-                cubeDictionary.Add(position, cube);
-            }
+
+            Vector3Int intPosition = Vector3Int.RoundToInt(cube.transform.position);
+            CubePos.Add(intPosition);
+            Debug.Log(intPosition + " added");
+            
             switch (tag)
             {
                 case "1":
-                    cube.gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    cube.gameObject.GetComponent<Renderer>().material = cubeMaterialICE;
                     break;
                 case "2":
                     cube.gameObject.GetComponent<Renderer>().material.color = Color.blue;
