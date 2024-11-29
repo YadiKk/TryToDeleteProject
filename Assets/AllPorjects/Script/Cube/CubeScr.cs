@@ -119,10 +119,10 @@ public class CubeScr : MonoBehaviour
                     cube.gameObject.GetComponent<Renderer>().material = cubeMaterialICE;
                     break;
                 case "2":
-                    cube.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                    cube.gameObject.GetComponent<Renderer>().material = cubeMaterialSnows;
                     break;
                 case "3":
-                    cube.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                    cube.gameObject.GetComponent<Renderer>().material = cubeMaterialStone;
                     break;
 
             }
