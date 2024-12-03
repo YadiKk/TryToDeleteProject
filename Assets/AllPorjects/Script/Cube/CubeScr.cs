@@ -153,7 +153,7 @@ public class CubeScr : MonoBehaviour
     public void UpdateOutlinesRed()
     {
         SelectColorCount = 1;
-        LeanTween.rotateZ(Crice, -60f, rotLerp)
+        LeanTween.rotateZ(Crice, 0f, rotLerp)
                  .setEase(LeanTweenType.easeOutQuad);
         UpdateActiveCubes();
         UpdateOutlines();
@@ -162,7 +162,7 @@ public class CubeScr : MonoBehaviour
     public void UpdateOutlinesBlue()
     {
         SelectColorCount = 2;
-        LeanTween.rotateZ(Crice, 60f, rotLerp)
+        LeanTween.rotateZ(Crice, 120f, rotLerp)
                  .setEase(LeanTweenType.easeOutQuad);
         UpdateActiveCubes();
         UpdateOutlines();
@@ -173,7 +173,7 @@ public class CubeScr : MonoBehaviour
         SelectColorCount = 3;
         LeanTween.
             rotateZ(Crice,
-          180f,
+          240f,
           rotLerp)
                 .setEase(LeanTweenType.easeOutQuad);
         UpdateActiveCubes();

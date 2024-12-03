@@ -1,12 +1,12 @@
 # ninja log v5
-10	87	7540714420167789	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	9d39797ed0f95b95
-87	177	7540714420921670	D:/Github/TryToDeleteProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/5x635n3e/obj/arm64-v8a/libswappywrapper.so	d93b08911bfe3f47
-4	666	7540714425909053	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c0b485916f8ca38b
-5	672	7540714425979262	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	311c5f44d8310976
-3	691	7540714426175858	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8770815f5c0e09c
-7	696	7540714426214148	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	42a9cca61eeb8b37
-9	754	7540714426768935	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b8fa623159158b1c
-6	804	7540714427262727	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	54c9cca91d817521
-1	815	7540714427397660	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	afdd6f7e6e0a9277
-3	898	7540714428194697	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a7b3963c36a346b3
-898	970	7540714428886135	D:/Github/TryToDeleteProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/5x635n3e/obj/arm64-v8a/libgame.so	628db47fc5c54d07
+12	99	7546058175438380	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c366d3a92e79e1e0
+99	164	7546058176010425	D:/Github/TryToDeleteProject/Library/PramData/AndroidApplicationController/Cache/com.refusiongamestudio.trytodelete/gradle-project/unityLibrary/build/intermediates/cxx/Debug/5x635n3e/obj/arm64-v8a/libswappywrapper.so	285e8861d4eec78b
+3	528	7546058179709208	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1aca881fa0c29a50
+4	541	7546058179832838	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2295427b2ded1efa
+10	550	7546058179919970	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	359ca66daee88fa8
+6	555	7546058179976703	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	842b888935eb2875
+8	563	7546058180049096	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	991ffb987b39a161
+0	576	7546058180186568	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	cf908c19a249a01b
+6	632	7546058180720065	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	673bea13144ea8c9
+2	648	7546058180880247	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	1e4af551c1583452
+649	698	7546058181339138	D:/Github/TryToDeleteProject/Library/PramData/AndroidApplicationController/Cache/com.refusiongamestudio.trytodelete/gradle-project/unityLibrary/build/intermediates/cxx/Debug/5x635n3e/obj/arm64-v8a/libgame.so	1faf72d3f754bcad

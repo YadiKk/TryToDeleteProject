@@ -3545,7 +3545,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8280527184051600400, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CubeScr, Assembly-CSharp
         m_MethodName: UpdateOutlinesGreen
         m_Mode: 1
@@ -5262,7 +5262,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8280527184051600400, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CubeScr, Assembly-CSharp
         m_MethodName: UpdateOutlinesBlue
         m_Mode: 1
@@ -8214,7 +8214,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8280527184051600400, guid: 4326dc1baa856f8439a1e36c52481614, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CubeScr, Assembly-CSharp
         m_MethodName: UpdateOutlinesRed
         m_Mode: 1

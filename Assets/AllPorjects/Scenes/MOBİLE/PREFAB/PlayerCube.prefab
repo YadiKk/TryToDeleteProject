@@ -266,6 +266,8 @@ MonoBehaviour:
   left: 0
   forwrd: 0
   back: 0
+  directionCheck: 
+  directiontestFlags: 
   swipeListener: {fileID: 0}
   sphereRadius: 1.24
 --- !u!114 &8280527184051600400
@@ -281,6 +283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereRadius: 0.3
+  cubeMaterialICE: {fileID: 2100000, guid: 112b519859bfcd248a804818e030ee3f, type: 2}
+  cubeMaterialSnows: {fileID: 2100000, guid: da1f918b4956e834ca2ca157be5b4073, type: 2}
+  cubeMaterialStone: {fileID: 2100000, guid: f6c212f110938a34ea12f89b66ca5b44, type: 2}
   SelectColorCount: 2
   RedImage: {fileID: 0}
   BlueImage: {fileID: 0}
